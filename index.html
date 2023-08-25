@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nazmul's Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <!-- item -->
+
+    <div class="bg-white">
+        <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+            <h2 class="sr-only">Products</h2>
+
+            <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+
+                <!-- item 1 -->
+                <div class="group">
+                    <div
+                        class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                        <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg"
+                            alt="Tall slender porcelain bottle with natural clay textured body and cork stopper."
+                            class="h-full w-full object-cover object-center group-hover:opacity-75">
+                    </div>
+                    <div class="">
+                        <h3 class="mt-4 text-sm text-gray-700">Earthen Bottle</h3>
+                        <p class="mt-1 text-lg font-medium text-gray-900">$ <span>48</span></p>
+                        <button
+                            class="bg-[#000] hover:bg-[#793FDF] hover:text-[17px] transition-all w-full py-2 text-[#fff] font-semibold rounded-md"
+                            onclick="handleBtnClick(this)">Ad to card</button>
+                    </div>
+                </div>
+
+                <!-- item 2 -->
+                <div class="group">
+                    <div
+                        class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                        <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg"
+                            alt="Olive drab green insulated bottle with flared screw lid and flat top."
+                            class="h-full w-full object-cover object-center group-hover:opacity-75">
+                    </div>
+                    <div class="">
+                        <h3 class="mt-4 text-sm text-gray-700">Nomad Tumbler</h3>
+                        <p class="mt-1 text-lg font-medium text-gray-900">$<span>35</span></p>
+                        <button
+                            class="bg-[#000] hover:bg-[#793FDF] hover:text-[17px] transition-all  w-full py-2 text-[#fff] font-semibold rounded-md"
+                            onclick="handleBtnClick(this)">Ad to card</button>
+                    </div>
+                </div>
+
+                <!-- item 3 -->
+                <div class="group">
+                    <div
+                        class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                        <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg"
+                            alt="Person using a pen to cross a task off a productivity paper card."
+                            class="h-full w-full object-cover object-center group-hover:opacity-75">
+                    </div>
+                    <div class="">
+                        <h3 class="mt-4 text-sm text-gray-700">Focus Paper Refill</h3>
+                        <p class="mt-1 text-lg font-medium text-gray-900">$ <span>89</span></p>
+                        <button
+                            class="bg-[#000] hover:bg-[#793FDF] hover:text-[17px] transition-all  w-full py-2 text-[#fff] font-semibold rounded-md"
+                            onclick="handleBtnClick(this)">Ad to card</button>
+                    </div>
+                </div>
+
+                <!-- item 4 -->
+                <div class="group">
+                    <div
+                        class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                        <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg"
+                            alt="Hand holding black machined steel mechanical pencil with brass tip and top."
+                            class="h-full w-full object-cover object-center group-hover:opacity-75">
+                    </div>
+                    <div class="">
+                        <h3 class="mt-4 text-sm text-gray-700">Machined Mechanical Pencil</h3>
+                        <p class="mt-1 text-lg font-medium text-gray-900">$ <span>35</span></p>
+                        <button
+                            class="bg-[#000] hover:bg-[#793FDF] hover:text-[17px] transition-all  w-full py-2 text-[#fff] font-semibold rounded-md"
+                            onclick="handleBtnClick(this)">Ad to card</button>
+                    </div>
+                </div>
+
+                <!-- More products... -->
+            </div>
+        </div>
+    </div>
+
+    <!-- cart -->
+
+    <!--  -->
+    <!-- Sub total -->
+    <div class="mt-6 h-full rounded-lg border bg-white p-6 md:mt-0 md:w-full">
+        <div class=" mb-10">
+            <p><u>Selected Items:</u></p>
+
+            <!-- cupon button -->
+            <div class=" justify-end flex">
+                <input type="text" placeholder="Enter your cupon here" class="bg-[#eee] px-3 rounded-l-md" id="cupon-input-filed">
+                <button class="text-[#fff] font-bold rounded-r-md bg-[#2563EB] py-3 px-5" id="apply-btn">Apply</button>
+            </div>
+
+            <!-- selected list -->
+            <ol class="list-decimal ml-4" id="Selected-Items">
+            </ol>
+         
+        </div>
+        <hr>
+        <div class="mb-2 flex justify-between">
+
+            <p class="text-gray-700">Subtotal</p>
+            <p class="text-gray-700">$ <span id="subtotal">0.00</span></p>
+        </div>
+        <div class="flex justify-between">
+            <p class="text-gray-700">Discount</p>
+            <p class="text-gray-700">$ <span id="discount">0.00</span></p>
+        </div>
+        <hr class="my-4" />
+        <div class="flex justify-between">
+            <p class="text-lg font-bold">Total</p>
+            <div class="">
+                <p class="mb-1 text-lg font-bold">$ <span id="total">0.00</span> USD</p>
+                <p class="text-sm text-gray-700">including VAT</p>
+            </div>
+        </div>
+        <!-- Open the modal using ID.showModal() method -->
+        <button style="background: #8373739c; color: #0000008c;" class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600"" onclick="
+            my_modal_5.showModal()" disabled id="submit-btn">Check Out</button>
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+            <form method="dialog" class="modal-box">
+                <div class="card bg-base-100">
+                    <figure class="px-10 pt-10">
+                        <img src="./hello-kitty-congratulations.gif" alt="Shoes" class="rounded-xl w-[70%]" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title font-bold">Congratulations</h2>
+                        <p>Your order has been placed</p>
+                        <div class="card-actions">
+                            <button class="text-[#fff] bg-[#2563EB] py-2 px-4 rounded-md" type="button"
+                                onclick="window.location.reload();">Go Home</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-action">
+                    <!-- if there is a button in form, it will close the modal -->
+
+                </div>
+            </form>
+        </dialog>
+    </div>
+    </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <p class="mt-8 mb-8 text-center">&copy; Sheikh Mohammad Nazmul Hasan - 2023</p>
+    </footer>
+</body>
+
+<!-- external js linking here -->
+<script src="./main.js"></script>
+</body>
+
+</html>
